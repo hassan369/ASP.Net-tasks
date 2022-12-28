@@ -18,6 +18,7 @@
                     add comment<br />
                     <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     &nbsp;
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="height: 29px" Text="Add" />
                     <br />
                     <asp:Label ID="Label1" runat="server"></asp:Label>
                 </ContentTemplate>
@@ -25,8 +26,7 @@
             <br />
         </div>
         <p>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" style="height: 29px" Text="Add" />
-        </p>
+            &nbsp;</p>
     </form>
 </body>
 </html>
