@@ -6,7 +6,8 @@
        
   <!-- Email input -->
   <div class="form-outline mb-4">
-    <input type="email" id="form2Example1"  class="form-control" runat="server" />
+      <asp:TextBox CssClass="form-control" ID="TextBox2"  runat="server"></asp:TextBox>
+    <%--<input type="email" id="form2Example1"  class="form-control" runat="server" />--%>
     <label class="form-label" for="form2Example1">Email address</label>
   </div>
 
@@ -35,10 +36,10 @@
 
   <!-- Submit button -->
 <%--  <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>--%>
-        <asp:Button ID="Button1" CssClass="btn btn-primary btn-block mb-4" runat="server" Text="Sign in" />
+        <asp:Button ID="Button1" CssClass="btn btn-primary btn-block mb-4" runat="server" Text="Sign in" OnClick="Button1_Click" />
   <!-- Register buttons -->
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="form2Example1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="RequiredFieldPassword"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator" ValidationGroup="signin"></asp:RequiredFieldValidator>
+        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox1" ErrorMessage="RequiredFieldPassword" ValidationGroup="signin"></asp:RequiredFieldValidator>
   <div class="text-center">
     <p>Not a member? <a href="#!">Register</a></p>
     <p>or sign up with:</p>
@@ -60,4 +61,6 @@
   </div>
 
     </div>
+    <br />
+    
 </asp:Content>
