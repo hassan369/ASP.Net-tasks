@@ -48,6 +48,7 @@ namespace testing_authentication
                 ww = Math.Round(ww, 2);
                 acc = Math.Round(acc, 2);
                 Label4.Text = (mom * 100).ToString() + "  %";
+                //Label4.Text += $"<input type=\"range\" id=\"vol\" name=\"vol\" min=\"0\" max=\"100\" value=\"{(double)mom}\">";
                 Label5.Text = (gg * 100).ToString() + "  %";
                 Label6.Text = (vv * 100).ToString() + "  %";
                 Label7.Text = (ww * 100).ToString() + "   %";

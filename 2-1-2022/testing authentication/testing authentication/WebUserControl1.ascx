@@ -8,19 +8,16 @@
     }
     .auto-style3 {
         font-size: large;
-        background-color: #CCCCFF;
+        background-color: lightgoldenrodyellow;
     }
 </style>
 <table class="auto-style1">
     <tr>
         <td class="auto-style2">
-<asp:Label ID="Label2" runat="server" Text="رأيكم يهمنا" BackColor="#99CCFF"></asp:Label>
         </td>
     </tr>
 </table>
-<p>
-    <asp:Label ID="Label3" runat="server" Text="ما مدى رضاك عن الخدمات الالكترونية؟"></asp:Label>
-</p>
+
 <asp:RadioButtonList ID="RadioButtonList1" runat="server">
     <asp:ListItem Value="1">ممتاز</asp:ListItem>
     <asp:ListItem Value="2">جيد جدا</asp:ListItem>
