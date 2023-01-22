@@ -25,10 +25,10 @@ namespace testing_authentication.Account
                 //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
                 signInManager.SignIn( user, isPersistent: false, rememberBrowser: false);
-                
+                manager.AddToRole(user.Id, DropDownList1.SelectedValue);
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
                 
-            }
+             }
             else 
             {
                 ErrorMessage.Text = result.Errors.FirstOrDefault();
