@@ -1,11 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addCustomerForm.aspx.cs" Inherits="WebApplication1.addCustomerForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="delete.aspx.cs" Inherits="WebApplication1.delete" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <style>
+     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -161,14 +161,16 @@ form .user-details .input-box{
 </head>
 <body>
     <form id="form1" runat="server">
-       <div class="container">
+        <div class="container">
     <div class="title">Add Customer</div>
     <div class="content">
       
         <div class="user-details">
           <div class="input-box">
             <span class="details">Full Name</span>
-            <input type="text" id="nameqq" runat="server" placeholder="Enter your name" required/>
+        <asp:Label ID="nameqq" runat="server" Text="Label"></asp:Label>
+
+            <%--<input type="text" id="nameqq" runat="server" placeholder="Enter your name" required/>--%>
           </div>
           <%--<div class="input-box">
             <span class="details">Username</span>
@@ -176,26 +178,31 @@ form .user-details .input-box{
           </div>--%>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" id="emailqq" runat="server" placeholder="Enter your email" required/>
+              <asp:Label ID="emailqq" runat="server" Text="Label"></asp:Label>
+            <%--<input type="text" id="emailqq" runat="server" placeholder="Enter your email" required/>--%>
           </div>
           <div class="input-box">
             <span class="details">Phone Number</span>
-            <input type="text" id="phoneqq" runat="server" placeholder="Enter your number" required/>
+       <asp:Label ID="phoneqq" runat="server" Text="Label"></asp:Label>
+
+            <%--<input type="text" id="phoneqq" runat="server" placeholder="Enter your number" required/>--%>
           </div>
           <div class="input-box">
             <span class="details">Age</span>
-            <input type="text" id="ageqq" runat="server" placeholder="Enter your age" required/>
+            <asp:Label ID="ageqq" runat="server" Text=""></asp:Label>
+
+            <%--<input type="text" id="ageqq" runat="server" placeholder="Enter your age" required/>--%>
           </div>
-          <div class="input-box">
+          <%--<div class="input-box">
             <span class="details">City</span>
               <asp:DropDownList CssClass="dropdownClass" ID="DropDownList1" runat="server"></asp:DropDownList>
             <%--<input type="text" placeholder="Confirm your password" required>--%>
-          </div>
-            <div class="input-box">
+          <%--</div>--%>
+            <%--<div class="input-box">
             <span class="details">Upload Photo</span>
                 <asp:FileUpload ID="FileUpload1" runat="server" />
 <%--            <input type="text" placeholder="Enter your age" required>--%>
-          </div>
+          <%--</div>--%>
         </div>
        <%-- <div class="gender-details">
           <input type="radio" name="gender" id="dot-1">
@@ -218,14 +225,13 @@ form .user-details .input-box{
           </div>
         </div>--%>
         <div class="button">
-            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
-          <%--<input type="submit" value="Register">--%>
+<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Delete" />          <%--<input type="submit" value="Register">--%>
         </div>
       
     </div>
   </div>
-        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        
     </form>
-
 </body>
 </html>

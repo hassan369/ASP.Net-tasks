@@ -18,17 +18,19 @@ namespace WebApplication1
                         join t2 in db.Customers
                         on t1.id equals t2.City_id
                         select new { t2.Customer_id, t2.Customer_name, t2.Age, t2.Email, t2.Phone, t2.Photo, t1.city1 };
+            
             var result = query.ToList();
 
 
-
+            GridView1.DataSource = result;
+            GridView1.DataBind();
 
             //var data3 =  db.Customers.ToList();
-            cont.InnerHtml += "<h1>A Fancy Table</h1>\r\n\r\n<table id=\"customers\"><tr>\r\n    <th>Name</th>\r\n    <th>Age</th>\r\n    <th>City</th>\r\n    <th>phone number</th>\r\n    <th>Email</th>\r\n    <th>Photo</th>\r\n  </tr>";
-            foreach (var entity in result)
-            {
-                cont.InnerHtml += $"<tr>\r\n    <td>{entity.Customer_name}</td>\r\n    <td>{entity.Age}</td>\r\n    <td>{entity.city1}</td>\r\n    <td>{entity.Phone}</tdh>\r\n    <td>{entity.Email}</td>\r\n    <td><img style='width:200px;height:100px ' src={entity.Photo} /></td>\r\n  </tr>";
-            }
+            //cont.InnerHtml += "<h1>A Fancy Table</h1>\r\n\r\n<table id=\"customers\"><tr>\r\n    <th>Name</th>\r\n    <th>Age</th>\r\n    <th>City</th>\r\n    <th>phone number</th>\r\n    <th>Email</th>\r\n    <th>Photo</th>\r\n  </tr>";
+            //foreach (var entity in result)
+            //{
+            //    cont.InnerHtml += $"<tr>\r\n    <td>{entity.Customer_name}</td>\r\n    <td>{entity.Age}</td>\r\n    <td>{entity.city1}</td>\r\n    <td>{entity.Phone}</tdh>\r\n    <td>{entity.Email}</td>\r\n    <td><img style='width:200px;height:100px ' src={entity.Photo} /></td>\r\n  </tr>";
+            //}
             //var obj = db.Citys.ToList();
             //GridView1.DataSource= data3;
             //GridView1.DataBind();

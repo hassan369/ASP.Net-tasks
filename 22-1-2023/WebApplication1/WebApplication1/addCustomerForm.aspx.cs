@@ -31,48 +31,50 @@ namespace WebApplication1
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-             //create path for the folder where to save the image
-                string folderPath = Server.MapPath("~/Images/");
+            //create path for the folder where to save the image
+            string folderPath = Server.MapPath("~/Images/");
 
-                //Check whether Directory (Folder) exists.
-                if (!Directory.Exists(folderPath))
+            //Check whether Directory (Folder) exists.
+            if (!Directory.Exists(folderPath))
+            {
+                //If Directory (Folder) does not exists Create it.
+                Directory.CreateDirectory(folderPath);
+            }
+
+            //Save the File to the Directory (Folder).
+            string fullPath = folderPath + Path.GetFileName(FileUpload1.FileName);
+            string srcPath = "/Images/" + Path.GetFileName(FileUpload1.FileName);
+
+            FileUpload1.SaveAs(fullPath);
+            //Image1.ImageUrl = srcPath;
+            if (FileUpload1 != null && FileUpload1.HasFile)
+            {
+
+                // Explicitly check if the file was an image (example approach)
+                if (FileUpload1.PostedFile.ContentType.ToLower().StartsWith("image/"))
                 {
-                    //If Directory (Folder) does not exists Create it.
-                    Directory.CreateDirectory(folderPath);
+                    // It is an image, save it
+                    FileUpload1.SaveAs(fullPath);
+
                 }
-
-                //Save the File to the Directory (Folder).
-                string fullPath = folderPath + Path.GetFileName(FileUpload1.FileName);
-                string srcPath = "/Images/" + Path.GetFileName(FileUpload1.FileName);
-
-                FileUpload1.SaveAs(fullPath);
-                //Image1.ImageUrl = srcPath;
-                if (FileUpload1 != null && FileUpload1.HasFile)
+                else
                 {
-
-                    // Explicitly check if the file was an image (example approach)
-                    if (FileUpload1.PostedFile.ContentType.ToLower().StartsWith("image/"))
-                    {
-                        // It is an image, save it
-                        FileUpload1.SaveAs(fullPath);
-
-                    }
-                    else
-                    {
-                        Label1.Text += " file uploaded is not an image ";
-                        return;
-                        // Not an image, handle accordingly
-                    }
+                    Label1.Text += " file uploaded is not an image ";
+                    return;
+                    // Not an image, handle accordingly
                 }
+            }
 
-                Customer newOne = new Customer();
-                newOne.Customer_name = nameqq.Value;
-                newOne.Age = Convert.ToInt32(ageqq.Value);
-                newOne.City_id = Convert.ToInt32(DropDownList1.SelectedValue);
-                newOne.Phone = Convert.ToInt32(phoneqq.Value);
-                newOne.Email = emailqq.Value;
-            newOne.Photo = $"Images/{Path.GetFileName(FileUpload1.FileName)}";
-            
+            var newOne = new Customer()
+            {
+                Customer_name = nameqq.Value,
+                Age = Convert.ToInt32(ageqq.Value),
+                City_id = Convert.ToInt32(DropDownList1.SelectedValue),
+                Phone = Convert.ToInt32(phoneqq.Value),
+                Email = emailqq.Value,
+                Photo = $"Images/{Path.GetFileName(FileUpload1.FileName)}",
+            };
+                
             db.Customers.Add(newOne);
             db.SaveChanges();
 

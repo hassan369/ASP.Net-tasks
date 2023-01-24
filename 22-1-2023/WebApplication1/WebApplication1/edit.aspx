@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addCustomerForm.aspx.cs" Inherits="WebApplication1.addCustomerForm" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="edit.aspx.cs" Inherits="WebApplication1.edit" %>
 
 <!DOCTYPE html>
 
@@ -161,7 +161,7 @@ form .user-details .input-box{
 </head>
 <body>
     <form id="form1" runat="server">
-       <div class="container">
+         <div class="container">
     <div class="title">Add Customer</div>
     <div class="content">
       
@@ -218,14 +218,13 @@ form .user-details .input-box{
           </div>
         </div>--%>
         <div class="button">
-            <asp:Button ID="Button1" runat="server" Text="Add" OnClick="Button1_Click" />
+            <asp:Button ID="Button1" runat="server" Text="Update" OnClick="Button1_Click" />
           <%--<input type="submit" value="Register">--%>
         </div>
       
     </div>
   </div>
-        <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
-
 </body>
 </html>
